@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>100</order>
+        <role display_value="x_snc_hardware_l_0.IT_Manager" name="x_snc_hardware_l_0.IT_Manager">125fc5bac3011210580b114ed40131ac</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:31:35</sys_created_on>
+        <sys_id>da5fc5bac3011210580b114ed40131ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>125fc5bac3011210580b114ed40131ac</sys_name>
+        <sys_package display_value="Hardware Loan Manager" source="x_snc_hardware_l_0">555f85bac3011210580b114ed40131be</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Hardware Loan Manager">555f85bac3011210580b114ed40131be</sys_scope>
+        <sys_update_name>sys_embedded_help_role_da5fc5bac3011210580b114ed40131ae</sys_update_name>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:31:35</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>
