@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog">
+    <sc_cat_item_catalog action="DELETE">
+        <sc_cat_item display_value="Hardware Loan Request">f25f09bac3011210580b114ed401313f</sc_cat_item>
+        <sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog>
+        <sys_class_name>sc_cat_item_catalog</sys_class_name>
+        <sys_created_by>dale.dunkerley@snc</sys_created_by>
+        <sys_created_on>2025-08-05 08:19:49</sys_created_on>
+        <sys_id>c54c162fc3cfea10580b114ed40131b0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Catalog.Hardware Loan Request</sys_name>
+        <sys_package display_value="Hardware Loan Manager" source="x_snc_hardware_l_0">555f85bac3011210580b114ed40131be</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Hardware Loan Manager">555f85bac3011210580b114ed40131be</sys_scope>
+        <sys_update_name>sc_cat_item_catalog_c54c162fc3cfea10580b114ed40131b0</sys_update_name>
+        <sys_updated_by>dale.dunkerley@snc</sys_updated_by>
+        <sys_updated_on>2025-08-05 08:19:49</sys_updated_on>
+    </sc_cat_item_catalog>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Hardware Loan Manager">555f85bac3011210580b114ed40131be</application>
+        <file_path/>
+        <instance_id>b256a867dbecd1100b9d21c4059619cc</instance_id>
+        <instance_name>platformsuccessdev</instance_name>
+        <name>sc_cat_item_catalog_c54c162fc3cfea10580b114ed40131b0</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog"><sc_cat_item_catalog action="INSERT_OR_UPDATE"><sc_cat_item display_value="Hardware Loan Request">f25f09bac3011210580b114ed401313f</sc_cat_item><sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog><sys_class_name>sc_cat_item_catalog</sys_class_name><sys_created_by>dale.dunkerley@snc</sys_created_by><sys_created_on>2025-08-05 08:19:49</sys_created_on><sys_id>c54c162fc3cfea10580b114ed40131b0</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Service Catalog.Hardware Loan Request</sys_name><sys_package display_value="Hardware Loan Manager" source="x_snc_hardware_l_0">555f85bac3011210580b114ed40131be</sys_package><sys_policy/><sys_scope display_value="Hardware Loan Manager">555f85bac3011210580b114ed40131be</sys_scope><sys_update_name>sc_cat_item_catalog_c54c162fc3cfea10580b114ed40131b0</sys_update_name><sys_updated_by>dale.dunkerley@snc</sys_updated_by><sys_updated_on>2025-08-05 08:19:49</sys_updated_on></sc_cat_item_catalog></record_update>]]></payload>
+        <payload_hash>1005288872</payload_hash>
+        <record_name>Service Catalog.Hardware Loan Request</record_name>
+        <reverted_from/>
+        <source>fefbd2ebc3cfea10580b114ed40131d3</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>dale.dunkerley@snc</sys_created_by>
+        <sys_created_on>2025-08-05 08:19:49</sys_created_on>
+        <sys_id>094c162fc3cfea10580b114ed40131b5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1987950b69e0000001</sys_recorded_at>
+        <sys_updated_by>dale.dunkerley@snc</sys_updated_by>
+        <sys_updated_on>2025-08-05 08:19:49</sys_updated_on>
+        <type>Catalog Items Catalog</type>
+        <update_guid>094c162fb4cfea1076d8707cdd6b5cb4</update_guid>
+        <update_guid_history>094c162fb4cfea1076d8707cdd6b5cb4:1005288872</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Service Catalog.Hardware Loan Request">cd4c162fc3cfea10580b114ed40131c5</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>dale.dunkerley@snc</sys_created_by>
+        <sys_created_on>2025-08-05 08:19:50</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_catalog">sc_cat_item_catalog</sys_db_object>
+        <sys_id>6db9ab2995604eb084bdd98834c61100</sys_id>
+        <sys_metadata>c54c162fc3cfea10580b114ed40131b0</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Service Catalog.Hardware Loan Request</sys_name>
+        <sys_package display_value="Hardware Loan Manager" source="x_snc_hardware_l_0">555f85bac3011210580b114ed40131be</sys_package>
+        <sys_parent display_value="Hardware Loan Request">f25f09bac3011210580b114ed401313f</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Hardware Loan Manager">555f85bac3011210580b114ed40131be</sys_scope>
+        <sys_scope_delete display_value="">422ce101cd1743069e88ee0d310e2c29</sys_scope_delete>
+        <sys_update_name>sc_cat_item_catalog_c54c162fc3cfea10580b114ed40131b0</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_catalog_c54c162fc3cfea10580b114ed40131b0">094c162fc3cfea10580b114ed40131b5</sys_update_version>
+        <sys_updated_by>dale.dunkerley@snc</sys_updated_by>
+        <sys_updated_on>2025-08-05 08:19:50</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

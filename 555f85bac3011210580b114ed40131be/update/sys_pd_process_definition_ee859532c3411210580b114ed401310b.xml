@@ -1,0 +1,1470 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_pd_process_definition">
+    <sys_pd_process_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <description>Process for handling loan hardware requests</description>
+        <designer_state>{"diagram":{"hiddenElements":{"edges":{}}}}</designer_state>
+        <engine_major_version/>
+        <label>loan application</label>
+        <name>loan_application</name>
+        <now_assist_prompt>when a loan hardware request is submitted send to the app engine group for approval and after its approved, send a notification to the requestor nd then create a task for the desktop team to assign the hardware. if its rejected send a diffierent notification</now_assist_prompt>
+        <process_type/>
+        <restartable>RESTARTABLE_FALSE</restartable>
+        <run_on_pad_engine>false</run_on_pad_engine>
+        <schema_version>2</schema_version>
+        <snapshot/>
+        <start_non_blocking>true</start_non_blocking>
+        <status>draft</status>
+        <sync_state>COMPLETE</sync_state>
+        <synced_on/>
+        <sys_class_name>sys_pd_process_definition</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:05</sys_created_on>
+        <sys_id>ee859532c3411210580b114ed401310b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>loan application</sys_name>
+        <sys_package display_value="Hardware Loan Manager" source="x_snc_hardware_l_0">555f85bac3011210580b114ed40131be</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Hardware Loan Manager">555f85bac3011210580b114ed40131be</sys_scope>
+        <sys_update_name>sys_pd_process_definition_ee859532c3411210580b114ed401310b</sys_update_name>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <view_type>DIAGRAM</view_type>
+    </sys_pd_process_definition>
+    <sys_pd_lane action="delete_multiple" query="process_definition=ee859532c3411210580b114ed401310b^sys_idNOT IN22859532c3411210580b114ed401310c,a2859532c3411210580b114ed401310c,26859532c3411210580b114ed401310c,e6859532c3411210580b114ed401310c"/>
+    <sys_pd_lane action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition_to_run/>
+        <description>Lane for submitting loan hardware requests</description>
+        <label>Submit Request</label>
+        <lane_condition/>
+        <name>submit_request</name>
+        <order>1</order>
+        <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
+        <restart_rule>RUN_ONLY_ONCE</restart_rule>
+        <start_rule display_value="Immediately">b823830967fc41ddb84959d97897b1ae</start_rule>
+        <start_rule_vars/>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:05</sys_created_on>
+        <sys_id>22859532c3411210580b114ed401310c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:05</sys_updated_on>
+        <visible_rule/>
+    </sys_pd_lane>
+    <sys_variable_value action="delete_multiple" query="document_key=22859532c3411210580b114ed401310c"/>
+    <sys_pd_lane action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition_to_run/>
+        <description>Lane for approving loan hardware requests</description>
+        <label>Approval</label>
+        <lane_condition/>
+        <name>approval</name>
+        <order>2</order>
+        <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
+        <restart_rule>RUN_ONLY_ONCE</restart_rule>
+        <start_rule display_value="After Lanes">7407ca1ac3e02110f1f504186e40dd50</start_rule>
+        <start_rule_vars/>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:05</sys_created_on>
+        <sys_id>a2859532c3411210580b114ed401310c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:05</sys_updated_on>
+        <visible_rule/>
+    </sys_pd_lane>
+    <sys_variable_value action="delete_multiple" query="document_key=a2859532c3411210580b114ed401310c"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_lane</document>
+        <document_key>a2859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:05</sys_created_on>
+        <sys_id>05a5ddfec3011210580b114ed401314e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:05</sys_updated_on>
+        <value>22859532c3411210580b114ed401310c</value>
+        <variable display_value="Lanes">9a070e1ac3e02110f1f504186e40ddd2</variable>
+    </sys_variable_value>
+    <sys_pd_lane action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition_to_run/>
+        <description>Lane for sending notifications</description>
+        <label>Notification</label>
+        <lane_condition/>
+        <name>notification</name>
+        <order>3</order>
+        <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
+        <restart_rule>RUN_ONLY_ONCE</restart_rule>
+        <start_rule display_value="After Lanes">7407ca1ac3e02110f1f504186e40dd50</start_rule>
+        <start_rule_vars/>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:05</sys_created_on>
+        <sys_id>26859532c3411210580b114ed401310c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:05</sys_updated_on>
+        <visible_rule/>
+    </sys_pd_lane>
+    <sys_variable_value action="delete_multiple" query="document_key=26859532c3411210580b114ed401310c"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_lane</document>
+        <document_key>26859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:05</sys_created_on>
+        <sys_id>8da5d532c3411210580b114ed4013191</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:05</sys_updated_on>
+        <value>a2859532c3411210580b114ed401310c</value>
+        <variable display_value="Lanes">9a070e1ac3e02110f1f504186e40ddd2</variable>
+    </sys_variable_value>
+    <sys_pd_lane action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition_to_run/>
+        <description>Lane for assigning tasks to the desktop team</description>
+        <label>Task Assignment</label>
+        <lane_condition/>
+        <name>task_assignment</name>
+        <order>4</order>
+        <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
+        <restart_rule>RUN_ONLY_ONCE</restart_rule>
+        <start_rule display_value="After Lanes">7407ca1ac3e02110f1f504186e40dd50</start_rule>
+        <start_rule_vars/>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:05</sys_created_on>
+        <sys_id>e6859532c3411210580b114ed401310c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:05</sys_updated_on>
+        <visible_rule/>
+    </sys_pd_lane>
+    <sys_variable_value action="delete_multiple" query="document_key=e6859532c3411210580b114ed401310c"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_lane</document>
+        <document_key>e6859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:05</sys_created_on>
+        <sys_id>49a5d532c3411210580b114ed4013192</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:05</sys_updated_on>
+        <value>26859532c3411210580b114ed401310c</value>
+        <variable display_value="Lanes">9a070e1ac3e02110f1f504186e40ddd2</variable>
+    </sys_variable_value>
+    <sys_pd_activity action="delete_multiple" query="process_definition=ee859532c3411210580b114ed401310b^sys_idNOT IN2a859532c3411210580b114ed401310c,62859532c3411210580b114ed401310c,66859532c3411210580b114ed401310c,e2859532c3411210580b114ed401310c,a6859532c3411210580b114ed401310c"/>
+    <sys_pd_activity action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <activity_definition display_value="Placeholder">ceac99e01b3f0010affd0e55cc4bcb83</activity_definition>
+        <condition_to_run/>
+        <derivative_order/>
+        <derivative_parent/>
+        <description>Activity to create a task for the desktop team to assign the hardware</description>
+        <inputs/>
+        <label>Create Task for Desktop Team</label>
+        <lane display_value="Task Assignment">e6859532c3411210580b114ed401310c</lane>
+        <name>create_task_for_desktop_team</name>
+        <order>1</order>
+        <outputs/>
+        <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
+        <restart_rule>RUN_ONLY_ONCE</restart_rule>
+        <start_rule display_value="Immediately">ef8ab8c0a3f04bceb117263f51401070</start_rule>
+        <start_rule_vars/>
+        <swim_lane/>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:05</sys_created_on>
+        <sys_id>2a859532c3411210580b114ed401310c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:05</sys_updated_on>
+        <type_vals/>
+        <variant/>
+    </sys_pd_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=2a859532c3411210580b114ed401310c"/>
+    <sys_pd_activity action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <activity_definition display_value="Create Record">f16277690703001070e493d0fad30018</activity_definition>
+        <condition_to_run/>
+        <derivative_order/>
+        <derivative_parent/>
+        <description>Activity to submit a loan hardware request</description>
+        <inputs/>
+        <label>Submit Loan Hardware Request</label>
+        <lane display_value="Submit Request">22859532c3411210580b114ed401310c</lane>
+        <name>submit_loan_hardware_request</name>
+        <order>1</order>
+        <outputs/>
+        <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
+        <restart_rule>RUN_ONLY_ONCE</restart_rule>
+        <start_rule display_value="Immediately">ef8ab8c0a3f04bceb117263f51401070</start_rule>
+        <start_rule_vars/>
+        <swim_lane/>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:05</sys_created_on>
+        <sys_id>62859532c3411210580b114ed401310c</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <type_vals/>
+        <type_vals/>
+        <variant/>
+    </sys_pd_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=62859532c3411210580b114ed401310c"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>62859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:40</sys_created_on>
+        <sys_id>21c59932c3411210580b114ed40131df</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <value/>
+        <variable display_value="Title">986499fbff001010393e53bd6338f13d</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>62859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>25f59d32c3411210580b114ed40131a1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Is Automated">ac6499fbff001010393e53bd6338f199</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>62859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>25f59d32c3411210580b114ed40131a4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Show Checklist">fc64d9fbff001010393e53bd6338f11f</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>62859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:40</sys_created_on>
+        <sys_id>29c5d932c3411210580b114ed401314f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <value/>
+        <variable display_value="Form View">306499fbff001010393e53bd6338f1da</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>62859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>29f59d32c3411210580b114ed40131a3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Is Automated">ac6499fbff001010393e53bd6338f199</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>62859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>2df59d32c3411210580b114ed40131a3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Attachments read only">246499fbff001010393e53bd6338f188</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>62859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>61f59d32c3411210580b114ed40131a4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Show SLA">a46499fbff001010393e53bd6338f177</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>62859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:40</sys_created_on>
+        <sys_id>65c5d932c3411210580b114ed401314f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:40</sys_updated_on>
+        <value>Create Record</value>
+        <variable display_value="Tagline">786499fbff001010393e53bd6338f1fc</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>62859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:40</sys_created_on>
+        <sys_id>6dc59932c3411210580b114ed40131de</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <value/>
+        <variable display_value="Description">546499fbff001010393e53bd6338f14e</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>62859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:40</sys_created_on>
+        <sys_id>a1c5d932c3411210580b114ed401314f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <value/>
+        <variable display_value="Template Fields">07a68b3dff812010748653bd6338f153</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>62859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>a1f59d32c3411210580b114ed40131a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Attachments read only">246499fbff001010393e53bd6338f188</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>62859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:40</sys_created_on>
+        <sys_id>a9c59932c3411210580b114ed40131de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:40</sys_updated_on>
+        <value>document_outline</value>
+        <variable display_value="Icon">fc64d9fbff001010393e53bd6338f10d</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>62859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>adf59d32c3411210580b114ed40131a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Show Checklist">fc64d9fbff001010393e53bd6338f11f</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>62859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:40</sys_created_on>
+        <sys_id>e5c59932c3411210580b114ed40131de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:40</sys_updated_on>
+        <value/>
+        <variable display_value="Pending State Description">e86499fbff001010393e53bd6338f1ab</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>62859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>e9f59d32c3411210580b114ed40131a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Show SLA">a46499fbff001010393e53bd6338f177</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_input_70185ea4db9f0010efc65404ce9619b0^id=62859532c3411210580b114ed401310c"/>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_70185ea4db9f0010efc65404ce9619b0^id=62859532c3411210580b114ed401310c"/>
+    <sys_element_mapping action="delete_multiple" query="id=62859532c3411210580b114ed401310c"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>associated_record</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:40</sys_created_on>
+        <sys_id>e1c59932c3411210580b114ed40131dd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:40</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value>{{vl.Wait For Create Record./end.record_created}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>associated_table</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:40</sys_created_on>
+        <sys_id>21c59932c3411210580b114ed40131dd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:40</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value>{{vl.Wait For Create Record./end.table}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>attachments_read_only</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>e5f59d32c3411210580b114ed401319f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>attachment_source</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>a9f59d32c3411210580b114ed40131a0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>description</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:40</sys_created_on>
+        <sys_id>69c59932c3411210580b114ed40131dd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:40</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value>{{act.62859532c3411210580b114ed401310c.description}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>experience_status_record</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>2df59d32c3411210580b114ed401319e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>experience_status_table</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>e5f59d32c3411210580b114ed40131a0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>footer</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>edf59d32c3411210580b114ed401319e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>form_fields</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>adf59d32c3411210580b114ed401319f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>form_view</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>a9f5d932c3411210580b114ed40131fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_70185ea4db9f0010efc65404ce9619b0</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>form_view</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:40</sys_created_on>
+        <sys_id>65c59932c3411210580b114ed40131de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:40</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value>{{vl.Wait For Create Record./start.form_view}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>icon</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:40</sys_created_on>
+        <sys_id>a5c59932c3411210580b114ed40131dd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:40</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>is_automated</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>a1f59d32c3411210580b114ed401319f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>pending_description</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:40</sys_created_on>
+        <sys_id>29c59932c3411210580b114ed40131dc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:40</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>pending_title</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>61f59d32c3411210580b114ed40131a0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record_fields</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>6df59d32c3411210580b114ed40131a0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>show_checklist</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>21f59d32c3411210580b114ed40131a1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>show_sla</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>25f59d32c3411210580b114ed40131a0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>e5f5d932c3411210580b114ed40131fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_70185ea4db9f0010efc65404ce9619b0</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>tagline</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:40</sys_created_on>
+        <sys_id>a1c59932c3411210580b114ed40131de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:40</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>template_fields</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:40</sys_created_on>
+        <sys_id>edc59932c3411210580b114ed40131dd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:40</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value>{{act.62859532c3411210580b114ed401310c.inputs.template_fields}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>template_fields</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:29</sys_created_on>
+        <sys_id>25f5d932c3411210580b114ed40131fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:29</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_70185ea4db9f0010efc65404ce9619b0</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>title</field>
+        <id>62859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:40</sys_created_on>
+        <sys_id>2dc59932c3411210580b114ed40131dd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:40</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_dc6459fbff001010393e53bd6338f1cb</table>
+        <value>New {{vl.Wait For Create Record./start.table}} Record</value>
+    </sys_element_mapping>
+    <sys_pd_activity action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <activity_definition display_value="Placeholder">ceac99e01b3f0010affd0e55cc4bcb83</activity_definition>
+        <condition_to_run/>
+        <derivative_order/>
+        <derivative_parent/>
+        <description>Activity to send a notification to the requestor after approval</description>
+        <inputs/>
+        <label>Send Approval Notification</label>
+        <lane display_value="Notification">26859532c3411210580b114ed401310c</lane>
+        <name>send_approval_notification</name>
+        <order>1</order>
+        <outputs/>
+        <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
+        <restart_rule>RUN_ONLY_ONCE</restart_rule>
+        <start_rule display_value="Immediately">ef8ab8c0a3f04bceb117263f51401070</start_rule>
+        <start_rule_vars/>
+        <swim_lane/>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:05</sys_created_on>
+        <sys_id>66859532c3411210580b114ed401310c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:05</sys_updated_on>
+        <type_vals/>
+        <variant/>
+    </sys_pd_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=66859532c3411210580b114ed401310c"/>
+    <sys_pd_activity action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <activity_definition display_value="Request Ad Hoc Approval">b54fdecb1b130150db4bba63cc4bcb58</activity_definition>
+        <condition_to_run/>
+        <derivative_order/>
+        <derivative_parent/>
+        <description>Activity to approve a loan hardware request</description>
+        <inputs/>
+        <inputs/>
+        <label>Approve Loan Hardware Request</label>
+        <lane display_value="Approval">a2859532c3411210580b114ed401310c</lane>
+        <name>approve_loan_hardware_request</name>
+        <order>1</order>
+        <outputs/>
+        <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
+        <restart_rule>RUN_ONLY_ONCE</restart_rule>
+        <start_rule display_value="Immediately">ef8ab8c0a3f04bceb117263f51401070</start_rule>
+        <start_rule_vars/>
+        <swim_lane/>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:05</sys_created_on>
+        <sys_id>e2859532c3411210580b114ed401310c</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <type_vals/>
+        <type_vals/>
+        <variant/>
+    </sys_pd_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=e2859532c3411210580b114ed401310c"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>e2859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>3406dd32c3411210580b114ed40131ff</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <value/>
+        <variable display_value="List Query">6f2f7ecf5b21001070e4492c11f91a77</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>e2859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>3806dd32c3411210580b114ed40131fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <value>state,approver.name,comments,sys_created_on</value>
+        <variable display_value="Columns">ca4591f25b21001070e4492c11f91a01</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>e2859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>7006dd32c3411210580b114ed40131ff</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <value/>
+        <variable display_value="Title">1d8b12fe5b61001070e4492c11f91a19</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>e2859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>7066d572c3411210580b114ed4013164</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Is Automated">091e9aeac7e60010bfbaf89f51c260ea</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>e2859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>7406dd32c3411210580b114ed40131fe</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <value/>
+        <variable display_value="List Title">12e9e761870300102252c88fc0e3ecb2</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>e2859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>7866d572c3411210580b114ed4013165</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Is Automated">091e9aeac7e60010bfbaf89f51c260ea</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>e2859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>bc06dd32c3411210580b114ed40131fe</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <value/>
+        <variable display_value="Description">47ceb192777220102a272f589a10616d</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>e2859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>f406dd32c3411210580b114ed40131ff</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <value>sysapproval_approver</value>
+        <variable display_value="Table">29255db25b21001070e4492c11f91ac5</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_pd_activity</document>
+        <document_key>e2859532c3411210580b114ed401310c</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>f806dd32c3411210580b114ed40131fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <value>checklist_fill</value>
+        <variable display_value="Icon">3f9d744673030010fe4a6da44cf6a7b9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=e2859532c3411210580b114ed401310c"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approver</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>fc66d572c3411210580b114ed401315d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8ec899171b934150db4bba63cc4bcb22</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approver_group</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>b466d572c3411210580b114ed401315e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8ec899171b934150db4bba63cc4bcb22</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>associated_record</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>f406dd32c3411210580b114ed40131fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value>{{vl.Request Ad hoc Approval./end.approval_record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>associated_table</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>e806dd32c3411210580b114ed40131fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value>{{vl.Request Ad hoc Approval.806fa064-c150-49d0-b427-00b8c751473e./start.table_name}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>columns</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>6006dd32c3411210580b114ed40131fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>description</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>b806dd32c3411210580b114ed40131fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value>{{act.e2859532c3411210580b114ed401310c.description}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>experience_status_record</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>ac06dd32c3411210580b114ed40131fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value>{{vl.Request Ad hoc Approval.643cdd0e-d5f7-42f7-8575-d0d3c05e84c5./end.record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>experience_status_table</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>bc66d572c3411210580b114ed4013162</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>icon</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>3406dd32c3411210580b114ed40131fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>is_automated</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>3c66d572c3411210580b114ed4013161</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>list_query</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>3006dd32c3411210580b114ed40131fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value>sysapproval={{vl.Request Ad hoc Approval./end.approval_record}}^sys_created_on&gt;=javascript:gs.dateGenerate({{vl.Request Ad hoc Approval./end.flow_created_on}})</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>list_title</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>2806dd32c3411210580b114ed40131fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value>Approval for this requests have been {{vl.Request Ad hoc Approval./end.state}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>max_columns</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>7866d572c3411210580b114ed4013162</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>3c66d572c3411210580b114ed401315e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8ec899171b934150db4bba63cc4bcb22</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record_fields</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>3466d572c3411210580b114ed4013163</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>row_count</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>b466d572c3411210580b114ed4013162</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>f006dd32c3411210580b114ed40131fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>7866d572c3411210580b114ed401315e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8ec899171b934150db4bba63cc4bcb22</table>
+        <value>{{act.e2859532c3411210580b114ed401310c}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>tagline</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>7066d572c3411210580b114ed4013163</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>title</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>7c06dd32c3411210580b114ed40131fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value>{{act.e2859532c3411210580b114ed401310c.label}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ui_view</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>fc66d572c3411210580b114ed4013161</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_flow_output_8ec899171b934150db4bba63cc4bcb22^id=e2859532c3411210580b114ed401310c"/>
+    <sys_element_mapping action="delete_multiple" query="id=e2859532c3411210580b114ed401310c"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approver</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>fc66d572c3411210580b114ed401315d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8ec899171b934150db4bba63cc4bcb22</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>approver_group</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>b466d572c3411210580b114ed401315e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8ec899171b934150db4bba63cc4bcb22</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>associated_record</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>f406dd32c3411210580b114ed40131fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value>{{vl.Request Ad hoc Approval./end.approval_record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>associated_table</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>e806dd32c3411210580b114ed40131fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value>{{vl.Request Ad hoc Approval.806fa064-c150-49d0-b427-00b8c751473e./start.table_name}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>columns</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>6006dd32c3411210580b114ed40131fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>description</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>b806dd32c3411210580b114ed40131fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value>{{act.e2859532c3411210580b114ed401310c.description}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>experience_status_record</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>ac06dd32c3411210580b114ed40131fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value>{{vl.Request Ad hoc Approval.643cdd0e-d5f7-42f7-8575-d0d3c05e84c5./end.record}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>experience_status_table</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>bc66d572c3411210580b114ed4013162</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>icon</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>3406dd32c3411210580b114ed40131fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>is_automated</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>3c66d572c3411210580b114ed4013161</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>list_query</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>3006dd32c3411210580b114ed40131fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value>sysapproval={{vl.Request Ad hoc Approval./end.approval_record}}^sys_created_on&gt;=javascript:gs.dateGenerate({{vl.Request Ad hoc Approval./end.flow_created_on}})</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>list_title</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>2806dd32c3411210580b114ed40131fc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value>Approval for this requests have been {{vl.Request Ad hoc Approval./end.state}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>max_columns</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>7866d572c3411210580b114ed4013162</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>3c66d572c3411210580b114ed401315e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8ec899171b934150db4bba63cc4bcb22</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record_fields</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>3466d572c3411210580b114ed4013163</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>row_count</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>b466d572c3411210580b114ed4013162</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>f006dd32c3411210580b114ed40131fe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>7866d572c3411210580b114ed401315e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_hub_flow_input_8ec899171b934150db4bba63cc4bcb22</table>
+        <value>{{act.e2859532c3411210580b114ed401310c}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>tagline</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>7066d572c3411210580b114ed4013163</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>title</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:00:42</sys_created_on>
+        <sys_id>7c06dd32c3411210580b114ed40131fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:00:42</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value>{{act.e2859532c3411210580b114ed401310c.label}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>ui_view</field>
+        <id>e2859532c3411210580b114ed401310c</id>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 13:02:21</sys_created_on>
+        <sys_id>fc66d572c3411210580b114ed4013161</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <table>var__m_sys_pd_activity_type_prop_fdbeceb95b61001070e4492c11f91a28</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_pd_activity action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <activity_definition display_value="Placeholder">ceac99e01b3f0010affd0e55cc4bcb83</activity_definition>
+        <condition_to_run/>
+        <derivative_order/>
+        <derivative_parent/>
+        <description>Activity to send a notification to the requestor after rejection</description>
+        <inputs/>
+        <label>Send Rejection Notification</label>
+        <lane display_value="Notification">26859532c3411210580b114ed401310c</lane>
+        <name>send_rejection_notification</name>
+        <order>2</order>
+        <outputs/>
+        <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
+        <restart_rule>RUN_ONLY_ONCE</restart_rule>
+        <start_rule display_value="Immediately">ef8ab8c0a3f04bceb117263f51401070</start_rule>
+        <start_rule_vars/>
+        <swim_lane/>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:05</sys_created_on>
+        <sys_id>a6859532c3411210580b114ed401310c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 12:59:05</sys_updated_on>
+        <type_vals/>
+        <variant/>
+    </sys_pd_activity>
+    <sys_variable_value action="delete_multiple" query="document_key=a6859532c3411210580b114ed401310c"/>
+    <sys_pd_process_variant action="delete_multiple" query="process_definition=ee859532c3411210580b114ed401310b"/>
+    <sys_pd_derivative action="delete_multiple" query="derivative_parent=2a859532c3411210580b114ed401310c"/>
+    <sys_pd_derivative action="delete_multiple" query="derivative_parent=62859532c3411210580b114ed401310c"/>
+    <sys_pd_derivative action="delete_multiple" query="derivative_parent=66859532c3411210580b114ed401310c"/>
+    <sys_pd_derivative action="delete_multiple" query="derivative_parent=a6859532c3411210580b114ed401310c"/>
+    <sys_pd_derivative action="delete_multiple" query="derivative_parent=e2859532c3411210580b114ed401310c"/>
+    <sys_pd_activity_override action="delete_multiple" query="override_parent=2a859532c3411210580b114ed401310c"/>
+    <sys_pd_activity_override action="delete_multiple" query="override_parent=62859532c3411210580b114ed401310c"/>
+    <sys_pd_activity_override action="delete_multiple" query="override_parent=66859532c3411210580b114ed401310c"/>
+    <sys_pd_activity_override action="delete_multiple" query="override_parent=a6859532c3411210580b114ed401310c"/>
+    <sys_pd_activity_override action="delete_multiple" query="override_parent=e2859532c3411210580b114ed401310c"/>
+    <sys_pd_process_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <description>Process for handling loan hardware requests</description>
+        <designer_state>{"diagram":{"hiddenElements":{"edges":{}}}}</designer_state>
+        <engine_major_version/>
+        <label>loan application</label>
+        <name>loan_application</name>
+        <now_assist_prompt>when a loan hardware request is submitted send to the app engine group for approval and after its approved, send a notification to the requestor nd then create a task for the desktop team to assign the hardware. if its rejected send a diffierent notification</now_assist_prompt>
+        <process_type/>
+        <restartable>RESTARTABLE_FALSE</restartable>
+        <run_on_pad_engine>false</run_on_pad_engine>
+        <schema_version>2</schema_version>
+        <snapshot/>
+        <start_non_blocking>true</start_non_blocking>
+        <status>draft</status>
+        <sync_state>COMPLETE</sync_state>
+        <synced_on/>
+        <sys_class_name>sys_pd_process_definition</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:59:05</sys_created_on>
+        <sys_id>ee859532c3411210580b114ed401310b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>loan application</sys_name>
+        <sys_package display_value="Hardware Loan Manager" source="x_snc_hardware_l_0">555f85bac3011210580b114ed40131be</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Hardware Loan Manager">555f85bac3011210580b114ed40131be</sys_scope>
+        <sys_update_name>sys_pd_process_definition_ee859532c3411210580b114ed401310b</sys_update_name>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
+        <view_type>DIAGRAM</view_type>
+    </sys_pd_process_definition>
+</record_update>

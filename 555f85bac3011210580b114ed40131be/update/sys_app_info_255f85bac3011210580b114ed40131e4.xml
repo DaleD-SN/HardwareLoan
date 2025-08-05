@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_info">
+    <sys_app_info action="INSERT_OR_UPDATE">
+        <properties>{"generated_using_ai":"true","ai_sysids":"[\"2d5fc5bac3011210580b114ed4013103\",\"125fc5bac3011210580b114ed40131ac\",\"2e5fc5bac3011210580b114ed40131fc\",\"f25f09bac3011210580b114ed401313f\"]","ai_sysids_unreviewed":"[\"2d5fc5bac3011210580b114ed4013103\",\"125fc5bac3011210580b114ed40131ac\",\"2e5fc5bac3011210580b114ed40131fc\"]"}</properties>
+        <sys_class_name>sys_app_info</sys_class_name>
+        <sys_created_by>Dale.Dunkerley</sys_created_by>
+        <sys_created_on>2024-10-08 12:31:32</sys_created_on>
+        <sys_id>255f85bac3011210580b114ed40131e4</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Hardware Loan Manager" source="x_snc_hardware_l_0">555f85bac3011210580b114ed40131be</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Hardware Loan Manager">555f85bac3011210580b114ed40131be</sys_scope>
+        <sys_update_name>sys_app_info_255f85bac3011210580b114ed40131e4</sys_update_name>
+        <sys_updated_by>Dale.Dunkerley</sys_updated_by>
+        <sys_updated_on>2025-01-17 12:18:19</sys_updated_on>
+    </sys_app_info>
+</record_update>

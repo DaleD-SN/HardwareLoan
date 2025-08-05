@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="2d5fc5bac3011210580b114ed4013103" label="Hardware Loans" max_length="40" name="x_snc_hardware_l_0_hardware_loans" type="collection">
+        <element attributes="encode_utf8=false" label="Requested By" mandatory="true" max_length="32" name="requested_by" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Due Date" mandatory="true" max_length="40" name="due_date" type="glide_date"/>
+        <element attributes="encode_utf8=false" label="Assigned To" max_length="32" name="assigned_to" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Hardware Type" mandatory="true" max_length="40" name="hardware_type" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Reason" mandatory="true" max_length="40" name="reason" type="string"/>
+        <index name="index">
+            <element name="assigned_to"/>
+        </index>
+        <index name="index2">
+            <element name="requested_by"/>
+        </index>
+    </element>
+</database>
