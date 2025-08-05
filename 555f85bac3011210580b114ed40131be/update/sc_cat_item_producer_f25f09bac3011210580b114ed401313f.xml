@@ -6,7 +6,7 @@
         <availability>on_desktop</availability>
         <billable>false</billable>
         <can_cancel>false</can_cancel>
-        <category/>
+        <category display_value="Hardware">d258b953c611227a0146101fb1be7c31</category>
         <checked_out/>
         <cost>0</cost>
         <custom_cart/>
@@ -70,7 +70,7 @@
 * To access the variables, use `producer.var1` where var1 is the name of the variable
 * To access the Record Producer use `cat_item`
 */]]></save_script>
-        <sc_catalogs/>
+        <sc_catalogs>e0d08b13c3330100c8b837659bba8fb4</sc_catalogs>
         <sc_ic_item_staging/>
         <sc_ic_version/>
         <sc_template display_value="">7826deb4effb2110e398958cae97d7b5</sc_template>
@@ -89,14 +89,14 @@
         <sys_created_by>Dale.Dunkerley</sys_created_by>
         <sys_created_on>2024-10-08 12:31:37</sys_created_on>
         <sys_id>f25f09bac3011210580b114ed401313f</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>Hardware Loan Request</sys_name>
         <sys_package display_value="Hardware Loan Manager" source="x_snc_hardware_l_0">555f85bac3011210580b114ed40131be</sys_package>
         <sys_policy/>
         <sys_scope display_value="Hardware Loan Manager">555f85bac3011210580b114ed40131be</sys_scope>
         <sys_update_name>sc_cat_item_producer_f25f09bac3011210580b114ed401313f</sys_update_name>
-        <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2025-01-17 12:18:55</sys_updated_on>
+        <sys_updated_by>dale.dunkerley@snc</sys_updated_by>
+        <sys_updated_on>2025-08-05 08:19:57</sys_updated_on>
         <table_name>x_snc_hardware_l_0_hardware_loans</table_name>
         <taxonomy_topic/>
         <template/>
@@ -105,7 +105,7 @@
         <type>item</type>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
-        <version>7</version>
+        <version>9</version>
         <view/>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>
