@@ -7,7 +7,7 @@
         <billable>false</billable>
         <can_cancel>false</can_cancel>
         <category display_value="Hardware">d258b953c611227a0146101fb1be7c31</category>
-        <checked_out/>
+        <checked_out>true</checked_out>
         <cost>0</cost>
         <custom_cart/>
         <delivery_plan display_value="DEFAULT">523da512c611228900811a37c97c2014</delivery_plan>
@@ -81,22 +81,22 @@
 * Avoid `current.setAbortAction()` and generate a separate record
 * Use `producer.var1` to access variables
 */]]></script>
-        <short_description>Request for new hardware loan</short_description>
+        <short_description>Request for new hardware loan, which involves creating a catalog item to facilitate the process of borrowing and returning hardware assets.</short_description>
         <show_variable_help_on_load>false</show_variable_help_on_load>
         <start_closed>false</start_closed>
-        <state/>
+        <state>published</state>
         <sys_class_name>sc_cat_item_producer</sys_class_name>
         <sys_created_by>Dale.Dunkerley</sys_created_by>
         <sys_created_on>2024-10-08 12:31:37</sys_created_on>
         <sys_id>f25f09bac3011210580b114ed401313f</sys_id>
-        <sys_mod_count>9</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Hardware Loan Request</sys_name>
         <sys_package display_value="Hardware Loan Manager" source="x_snc_hardware_l_0">555f85bac3011210580b114ed40131be</sys_package>
         <sys_policy/>
         <sys_scope display_value="Hardware Loan Manager">555f85bac3011210580b114ed40131be</sys_scope>
         <sys_update_name>sc_cat_item_producer_f25f09bac3011210580b114ed401313f</sys_update_name>
         <sys_updated_by>dale.dunkerley@snc</sys_updated_by>
-        <sys_updated_on>2025-08-05 08:19:57</sys_updated_on>
+        <sys_updated_on>2025-08-11 12:52:09</sys_updated_on>
         <table_name>x_snc_hardware_l_0_hardware_loans</table_name>
         <taxonomy_topic/>
         <template/>
@@ -105,7 +105,7 @@
         <type>item</type>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
-        <version>9</version>
+        <version>10</version>
         <view/>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>

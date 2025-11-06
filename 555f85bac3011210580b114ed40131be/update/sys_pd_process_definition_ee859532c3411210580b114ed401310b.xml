@@ -8,9 +8,12 @@
         <label>loan application</label>
         <name>loan_application</name>
         <now_assist_prompt>when a loan hardware request is submitted send to the app engine group for approval and after its approved, send a notification to the requestor nd then create a task for the desktop team to assign the hardware. if its rejected send a diffierent notification</now_assist_prompt>
+        <permission/>
         <process_type/>
         <restartable>RESTARTABLE_FALSE</restartable>
         <run_on_pad_engine>false</run_on_pad_engine>
+        <run_strategy>run_once</run_strategy>
+        <run_strategy_on_process_definition>false</run_strategy_on_process_definition>
         <schema_version>2</schema_version>
         <snapshot/>
         <start_non_blocking>true</start_non_blocking>
@@ -31,6 +34,8 @@
         <sys_updated_on>2024-10-08 13:02:21</sys_updated_on>
         <view_type>DIAGRAM</view_type>
     </sys_pd_process_definition>
+    <sys_pd_process_input action="delete_multiple" query="model=ee859532c3411210580b114ed401310b"/>
+    <sys_pd_process_output action="delete_multiple" query="model=ee859532c3411210580b114ed401310b"/>
     <sys_pd_lane action="delete_multiple" query="process_definition=ee859532c3411210580b114ed401310b^sys_idNOT IN22859532c3411210580b114ed401310c,a2859532c3411210580b114ed401310c,26859532c3411210580b114ed401310c,e6859532c3411210580b114ed401310c"/>
     <sys_pd_lane action="INSERT_OR_UPDATE">
         <active>true</active>
@@ -40,10 +45,15 @@
         <lane_condition/>
         <name>submit_request</name>
         <order>1</order>
+        <permission/>
         <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
         <restart_rule>RUN_ONLY_ONCE</restart_rule>
         <start_rule display_value="Immediately">b823830967fc41ddb84959d97897b1ae</start_rule>
+        <start_rule_name/>
         <start_rule_vars/>
+        <starts_after_activities/>
+        <starts_after_branches/>
+        <starts_after_lanes/>
         <sys_created_by>Dale.Dunkerley</sys_created_by>
         <sys_created_on>2024-10-08 12:59:05</sys_created_on>
         <sys_id>22859532c3411210580b114ed401310c</sys_id>
@@ -61,10 +71,15 @@
         <lane_condition/>
         <name>approval</name>
         <order>2</order>
+        <permission/>
         <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
         <restart_rule>RUN_ONLY_ONCE</restart_rule>
         <start_rule display_value="After Lanes">7407ca1ac3e02110f1f504186e40dd50</start_rule>
+        <start_rule_name/>
         <start_rule_vars/>
+        <starts_after_activities/>
+        <starts_after_branches/>
+        <starts_after_lanes/>
         <sys_created_by>Dale.Dunkerley</sys_created_by>
         <sys_created_on>2024-10-08 12:59:05</sys_created_on>
         <sys_id>a2859532c3411210580b114ed401310c</sys_id>
@@ -96,10 +111,15 @@
         <lane_condition/>
         <name>notification</name>
         <order>3</order>
+        <permission/>
         <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
         <restart_rule>RUN_ONLY_ONCE</restart_rule>
         <start_rule display_value="After Lanes">7407ca1ac3e02110f1f504186e40dd50</start_rule>
+        <start_rule_name/>
         <start_rule_vars/>
+        <starts_after_activities/>
+        <starts_after_branches/>
+        <starts_after_lanes/>
         <sys_created_by>Dale.Dunkerley</sys_created_by>
         <sys_created_on>2024-10-08 12:59:05</sys_created_on>
         <sys_id>26859532c3411210580b114ed401310c</sys_id>
@@ -131,10 +151,15 @@
         <lane_condition/>
         <name>task_assignment</name>
         <order>4</order>
+        <permission/>
         <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
         <restart_rule>RUN_ONLY_ONCE</restart_rule>
         <start_rule display_value="After Lanes">7407ca1ac3e02110f1f504186e40dd50</start_rule>
+        <start_rule_name/>
         <start_rule_vars/>
+        <starts_after_activities/>
+        <starts_after_branches/>
+        <starts_after_lanes/>
         <sys_created_by>Dale.Dunkerley</sys_created_by>
         <sys_created_on>2024-10-08 12:59:05</sys_created_on>
         <sys_id>e6859532c3411210580b114ed401310c</sys_id>
@@ -158,14 +183,22 @@
         <value>26859532c3411210580b114ed401310c</value>
         <variable display_value="Lanes">9a070e1ac3e02110f1f504186e40ddd2</variable>
     </sys_variable_value>
+    <sys_pd_timer_attributes action="delete_multiple" query="process_definition=ee859532c3411210580b114ed401310b"/>
     <sys_pd_activity action="delete_multiple" query="process_definition=ee859532c3411210580b114ed401310b^sys_idNOT IN2a859532c3411210580b114ed401310c,62859532c3411210580b114ed401310c,66859532c3411210580b114ed401310c,e2859532c3411210580b114ed401310c,a6859532c3411210580b114ed401310c"/>
     <sys_pd_activity action="INSERT_OR_UPDATE">
         <active>true</active>
         <activity_definition display_value="Placeholder">ceac99e01b3f0010affd0e55cc4bcb83</activity_definition>
+        <ai_agent_execution_mode/>
+        <ai_agent_obj_additional_detail/>
+        <ai_agent_objective/>
+        <ai_agent_run_as>playbook_user</ai_agent_run_as>
+        <ai_agent_run_with_roles/>
+        <ai_agent_user/>
         <condition_to_run/>
         <derivative_order/>
         <derivative_parent/>
         <description>Activity to create a task for the desktop team to assign the hardware</description>
+        <enable_ai_agent>false</enable_ai_agent>
         <inputs/>
         <label>Create Task for Desktop Team</label>
         <lane display_value="Task Assignment">e6859532c3411210580b114ed401310c</lane>
@@ -175,7 +208,11 @@
         <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
         <restart_rule>RUN_ONLY_ONCE</restart_rule>
         <start_rule display_value="Immediately">ef8ab8c0a3f04bceb117263f51401070</start_rule>
+        <start_rule_name/>
         <start_rule_vars/>
+        <starts_after_activities/>
+        <starts_after_branches/>
+        <starts_after_lanes/>
         <swim_lane/>
         <sys_created_by>Dale.Dunkerley</sys_created_by>
         <sys_created_on>2024-10-08 12:59:05</sys_created_on>
@@ -189,11 +226,18 @@
     <sys_variable_value action="delete_multiple" query="document_key=2a859532c3411210580b114ed401310c"/>
     <sys_pd_activity action="INSERT_OR_UPDATE">
         <active>true</active>
-        <activity_definition display_value="Create Record">f16277690703001070e493d0fad30018</activity_definition>
+        <activity_definition display_value="New Record Form">f16277690703001070e493d0fad30018</activity_definition>
+        <ai_agent_execution_mode/>
+        <ai_agent_obj_additional_detail/>
+        <ai_agent_objective/>
+        <ai_agent_run_as>playbook_user</ai_agent_run_as>
+        <ai_agent_run_with_roles/>
+        <ai_agent_user/>
         <condition_to_run/>
         <derivative_order/>
         <derivative_parent/>
         <description>Activity to submit a loan hardware request</description>
+        <enable_ai_agent>false</enable_ai_agent>
         <inputs/>
         <label>Submit Loan Hardware Request</label>
         <lane display_value="Submit Request">22859532c3411210580b114ed401310c</lane>
@@ -203,7 +247,11 @@
         <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
         <restart_rule>RUN_ONLY_ONCE</restart_rule>
         <start_rule display_value="Immediately">ef8ab8c0a3f04bceb117263f51401070</start_rule>
+        <start_rule_name/>
         <start_rule_vars/>
+        <starts_after_activities/>
+        <starts_after_branches/>
+        <starts_after_lanes/>
         <swim_lane/>
         <sys_created_by>Dale.Dunkerley</sys_created_by>
         <sys_created_on>2024-10-08 12:59:05</sys_created_on>
@@ -708,10 +756,17 @@
     <sys_pd_activity action="INSERT_OR_UPDATE">
         <active>true</active>
         <activity_definition display_value="Placeholder">ceac99e01b3f0010affd0e55cc4bcb83</activity_definition>
+        <ai_agent_execution_mode/>
+        <ai_agent_obj_additional_detail/>
+        <ai_agent_objective/>
+        <ai_agent_run_as>playbook_user</ai_agent_run_as>
+        <ai_agent_run_with_roles/>
+        <ai_agent_user/>
         <condition_to_run/>
         <derivative_order/>
         <derivative_parent/>
         <description>Activity to send a notification to the requestor after approval</description>
+        <enable_ai_agent>false</enable_ai_agent>
         <inputs/>
         <label>Send Approval Notification</label>
         <lane display_value="Notification">26859532c3411210580b114ed401310c</lane>
@@ -721,7 +776,11 @@
         <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
         <restart_rule>RUN_ONLY_ONCE</restart_rule>
         <start_rule display_value="Immediately">ef8ab8c0a3f04bceb117263f51401070</start_rule>
+        <start_rule_name/>
         <start_rule_vars/>
+        <starts_after_activities/>
+        <starts_after_branches/>
+        <starts_after_lanes/>
         <swim_lane/>
         <sys_created_by>Dale.Dunkerley</sys_created_by>
         <sys_created_on>2024-10-08 12:59:05</sys_created_on>
@@ -735,11 +794,18 @@
     <sys_variable_value action="delete_multiple" query="document_key=66859532c3411210580b114ed401310c"/>
     <sys_pd_activity action="INSERT_OR_UPDATE">
         <active>true</active>
-        <activity_definition display_value="Request Ad Hoc Approval">b54fdecb1b130150db4bba63cc4bcb58</activity_definition>
+        <activity_definition display_value="Ask For Ad Hoc Approval">b54fdecb1b130150db4bba63cc4bcb58</activity_definition>
+        <ai_agent_execution_mode/>
+        <ai_agent_obj_additional_detail/>
+        <ai_agent_objective/>
+        <ai_agent_run_as>playbook_user</ai_agent_run_as>
+        <ai_agent_run_with_roles/>
+        <ai_agent_user/>
         <condition_to_run/>
         <derivative_order/>
         <derivative_parent/>
         <description>Activity to approve a loan hardware request</description>
+        <enable_ai_agent>false</enable_ai_agent>
         <inputs/>
         <inputs/>
         <label>Approve Loan Hardware Request</label>
@@ -750,7 +816,11 @@
         <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
         <restart_rule>RUN_ONLY_ONCE</restart_rule>
         <start_rule display_value="Immediately">ef8ab8c0a3f04bceb117263f51401070</start_rule>
+        <start_rule_name/>
         <start_rule_vars/>
+        <starts_after_activities/>
+        <starts_after_branches/>
+        <starts_after_lanes/>
         <swim_lane/>
         <sys_created_by>Dale.Dunkerley</sys_created_by>
         <sys_created_on>2024-10-08 12:59:05</sys_created_on>
@@ -1399,10 +1469,17 @@
     <sys_pd_activity action="INSERT_OR_UPDATE">
         <active>true</active>
         <activity_definition display_value="Placeholder">ceac99e01b3f0010affd0e55cc4bcb83</activity_definition>
+        <ai_agent_execution_mode/>
+        <ai_agent_obj_additional_detail/>
+        <ai_agent_objective/>
+        <ai_agent_run_as>playbook_user</ai_agent_run_as>
+        <ai_agent_run_with_roles/>
+        <ai_agent_user/>
         <condition_to_run/>
         <derivative_order/>
         <derivative_parent/>
         <description>Activity to send a notification to the requestor after rejection</description>
+        <enable_ai_agent>false</enable_ai_agent>
         <inputs/>
         <label>Send Rejection Notification</label>
         <lane display_value="Notification">26859532c3411210580b114ed401310c</lane>
@@ -1412,7 +1489,11 @@
         <process_definition display_value="loan application">ee859532c3411210580b114ed401310b</process_definition>
         <restart_rule>RUN_ONLY_ONCE</restart_rule>
         <start_rule display_value="Immediately">ef8ab8c0a3f04bceb117263f51401070</start_rule>
+        <start_rule_name/>
         <start_rule_vars/>
+        <starts_after_activities/>
+        <starts_after_branches/>
+        <starts_after_lanes/>
         <swim_lane/>
         <sys_created_by>Dale.Dunkerley</sys_created_by>
         <sys_created_on>2024-10-08 12:59:05</sys_created_on>
@@ -1444,9 +1525,12 @@
         <label>loan application</label>
         <name>loan_application</name>
         <now_assist_prompt>when a loan hardware request is submitted send to the app engine group for approval and after its approved, send a notification to the requestor nd then create a task for the desktop team to assign the hardware. if its rejected send a diffierent notification</now_assist_prompt>
+        <permission/>
         <process_type/>
         <restartable>RESTARTABLE_FALSE</restartable>
         <run_on_pad_engine>false</run_on_pad_engine>
+        <run_strategy>run_once</run_strategy>
+        <run_strategy_on_process_definition>false</run_strategy_on_process_definition>
         <schema_version>2</schema_version>
         <snapshot/>
         <start_non_blocking>true</start_non_blocking>
