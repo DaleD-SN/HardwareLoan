@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget">
+    <par_dashboard_widget action="DELETE">
+        <canvas display_value="">e5200529870db610009eb918dabb3598</canvas>
+        <component display_value="Heading">1f6e0643eca7a637e36bd7833549ec9e</component>
+        <component_props>{"variant":"header-primary","label":"Happening Now","wontWrap":false,"hasNoMargin":false,"level":"1","filterConfigurations":[],"noDebounce":"","contextMenuActions":[]}</component_props>
+        <h>3</h>
+        <name/>
+        <stored_component/>
+        <sys_class_name>par_dashboard_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 06:35:06</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a1200529870db610009eb918dabb35b1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Hardware Loan Manager" source="x_snc_hardware_l_0">555f85bac3011210580b114ed40131be</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Hardware Loan Manager">555f85bac3011210580b114ed40131be</sys_scope>
+        <sys_update_name>par_dashboard_widget_a1200529870db610009eb918dabb35b1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 06:35:06</sys_updated_on>
+        <visualization/>
+        <w>47</w>
+        <widget_props/>
+        <x>0</x>
+        <y>0</y>
+    </par_dashboard_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Hardware Loan Manager">555f85bac3011210580b114ed40131be</application>
+        <file_path/>
+        <instance_id>b256a867dbecd1100b9d21c4059619cc</instance_id>
+        <instance_name>platformsuccessdev</instance_name>
+        <name>par_dashboard_widget_a1200529870db610009eb918dabb35b1</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget"><par_dashboard_widget action="INSERT_OR_UPDATE"><canvas display_value="">e5200529870db610009eb918dabb3598</canvas><component display_value="Heading">1f6e0643eca7a637e36bd7833549ec9e</component><component_props>{"variant":"header-primary","label":"Happening Now","wontWrap":false,"hasNoMargin":false,"level":"1","filterConfigurations":[],"noDebounce":"","contextMenuActions":[]}</component_props><h>3</h><name/><stored_component/><sys_class_name>par_dashboard_widget</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-11-06 06:35:06</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>a1200529870db610009eb918dabb35b1</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_overrides/><sys_package display_value="Hardware Loan Manager" source="x_snc_hardware_l_0">555f85bac3011210580b114ed40131be</sys_package><sys_policy/><sys_scope display_value="Hardware Loan Manager">555f85bac3011210580b114ed40131be</sys_scope><sys_update_name>par_dashboard_widget_a1200529870db610009eb918dabb35b1</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-11-06 06:35:06</sys_updated_on><visualization/><w>47</w><widget_props/><x>0</x><y>0</y></par_dashboard_widget></record_update>]]></payload>
+        <payload_hash>-1507035501</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>ae2fa82587c9b610009eb918dabb35d2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 06:35:06</sys_created_on>
+        <sys_id>21200529870db610009eb918dabb35b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19a57e0425d0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 06:35:06</sys_updated_on>
+        <type>PAR Dashboard Widget</type>
+        <update_guid>65200529970db6108fb160353f25fbb2</update_guid>
+        <update_guid_history>65200529970db6108fb160353f25fbb2:-1507035501</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">ce204529870db610009eb918dabb3532</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 06:35:07</sys_created_on>
+        <sys_db_object display_value="" name="par_dashboard_widget">par_dashboard_widget</sys_db_object>
+        <sys_id>33df714ecf1e45a091a12d96ae4deda9</sys_id>
+        <sys_metadata>a1200529870db610009eb918dabb35b1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Hardware Loan Manager" source="x_snc_hardware_l_0">555f85bac3011210580b114ed40131be</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Hardware Loan Manager">555f85bac3011210580b114ed40131be</sys_scope>
+        <sys_scope_delete display_value="">422ce101cd1743069e88ee0d310e2c29</sys_scope_delete>
+        <sys_update_name>par_dashboard_widget_a1200529870db610009eb918dabb35b1</sys_update_name>
+        <sys_update_version display_value="par_dashboard_widget_a1200529870db610009eb918dabb35b1">21200529870db610009eb918dabb35b3</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 06:35:07</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

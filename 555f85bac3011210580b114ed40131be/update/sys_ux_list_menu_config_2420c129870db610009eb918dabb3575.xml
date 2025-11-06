@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_list_menu_config">
+    <sys_ux_list_menu_config action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <name>Hardware Loan Manager_menu_config</name>
+        <sys_class_name>sys_ux_list_menu_config</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-11-06 06:35:02</sys_created_on>
+        <sys_id>2420c129870db610009eb918dabb3575</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Hardware Loan Manager_menu_config</sys_name>
+        <sys_package display_value="Hardware Loan Manager" source="x_snc_hardware_l_0">555f85bac3011210580b114ed40131be</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Hardware Loan Manager">555f85bac3011210580b114ed40131be</sys_scope>
+        <sys_update_name>sys_ux_list_menu_config_2420c129870db610009eb918dabb3575</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-11-06 06:35:02</sys_updated_on>
+    </sys_ux_list_menu_config>
+</record_update>
