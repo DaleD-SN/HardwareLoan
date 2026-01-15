@@ -4,6 +4,7 @@
         <can_delegate>true</can_delegate>
         <description>Monitors hardware loan status and assigns items to users.</description>
         <elevated_privilege>false</elevated_privilege>
+        <federated_id>SLq2EKsBhdudI5FzAvlExp6ErzTa2SbPk2jbqJZiPgk=</federated_id>
         <grantable>true</grantable>
         <includes_roles/>
         <name>x_snc_hardware_l_0.IT_Manager</name>

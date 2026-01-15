@@ -8,10 +8,10 @@
         <derived>true</derived>
         <field/>
         <label>hardware-loan-manager Search Profile Default Spell Check Dictionary</label>
-        <last_derived>2025-12-04 09:49:32</last_derived>
+        <last_derived>2026-01-15 13:49:32</last_derived>
         <locale>en</locale>
         <name>x_snc_hardware_l_0_hardware_loan_manager_search_profile_default_spell_check_dictionary</name>
-        <publish_id>812fec73-415d-4875-9460-50f5ef558016</publish_id>
+        <publish_id>3d8d5763-85c0-4bbd-b1b2-8e369819e4e0</publish_id>
         <punctuation_sensitive>false</punctuation_sensitive>
         <state>PUBLISHED</state>
         <sys_class_name>ais_dictionary</sys_class_name>

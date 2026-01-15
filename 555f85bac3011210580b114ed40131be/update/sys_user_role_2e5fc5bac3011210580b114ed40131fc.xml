@@ -4,6 +4,7 @@
         <can_delegate>true</can_delegate>
         <description>Submit requests for new hardware loans.</description>
         <elevated_privilege>false</elevated_privilege>
+        <federated_id>vtmZXlqYoMpVqIZTE2XzsHpyNu7fH5KBEagimRRL/u4=</federated_id>
         <grantable>true</grantable>
         <includes_roles/>
         <name>x_snc_hardware_l_0.employee</name>

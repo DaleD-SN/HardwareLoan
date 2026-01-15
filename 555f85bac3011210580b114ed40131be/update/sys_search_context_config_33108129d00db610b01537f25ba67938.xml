@@ -5,6 +5,7 @@
         <document_match_count/>
         <document_match_threshold/>
         <enable_exact_match>true</enable_exact_match>
+        <enable_hybrid_search>false</enable_hybrid_search>
         <enable_semantic_search>false</enable_semantic_search>
         <evam_definition/>
         <filter_genius_results_by_search_source>false</filter_genius_results_by_search_source>
